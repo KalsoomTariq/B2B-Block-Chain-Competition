@@ -1,7 +1,16 @@
-const Raffle = artifacts.require("Adoption");
+const RaffleSystem = artifacts.require("Raffle");
 
-module.exports = function (deployer) {
-  const ticketPrice = web3.utils.toWei("0.01", "ether");
-  const jackpotPercent = 90;
-  deployer.deploy(Raffle);
+module.exports = async function (deployer, network, accounts) {
+  const ticketPrice = web3.utils.toWei("1", "ether");
+  const maxTicketsPerTx = 10;
+  const jackpotPercentage = 90;
+  const raffleDuration = 86400;
+
+  await deployer.deploy(
+    RaffleSystem,
+    ticketPrice,
+    maxTicketsPerTx,
+    jackpotPercentage,
+    raffleDuration
+  );
 };
