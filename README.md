@@ -103,11 +103,7 @@ This repository contains our Go-based implementation for **Question 2** of the B
 
 
 
-
-
-
-
 ## Contributors
-- 1 - Kalsoom Tariq
-- 2-  Kissa Zahra
-- 3 -  Aliza Ibrahim
+-  Kalsoom Tariq
+-  Kissa Zahra
+-  Aliza Ibrahim
