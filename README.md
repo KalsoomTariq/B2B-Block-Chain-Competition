@@ -100,7 +100,14 @@ This repository contains our Go-based implementation for **Question 2** of the B
 - **Fork Pruning**: Algorithm to determine the "heaviest" path in the DAG
 - **Visual Representation**: ASCII visualization of the growing DAG structure
 
-
+```Block 1 added with transactions [tx1 tx2]
+Block 2 added with transactions [tx3]
+Block 3 added with transactions [tx4 tx5 tx6]
+Block 1 hash: a4f4...
+Block 2 hash: 3bc9...
+Block 3 hash: f00d...
+Block 3 Merkle Root: 1a2b...
+```
 
 
 ## Contributors
