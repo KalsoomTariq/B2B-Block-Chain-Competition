@@ -159,9 +159,10 @@ Rebalancing shards...
 ✔️  Compressed Proof for 'account.bob.balance': []
 ```
 ### This confirms:
-- Transactions are added correctly.
-- DAG blocks are linking properly.
-- Merkle roots are generated based on transactions in each block.
+- How accounts are distributed across multiple shards.
+- Use of Merkle Patricia Trie to maintain cryptographic consistency.
+- How global state root hashes reflect system-wide state
+- Generation of compressed proofs to efficiently verify individual account values.
 
 
 
