@@ -68,6 +68,45 @@ When deploying the smart contract, you can customize:
 ### Ticket Binding (Ganache View)
 ![Ticket Binding Ganache View](https://github.com/user-attachments/assets/41184d97-1869-41d6-875e-5c5451bf3bad)
 
+
+
+# Q2: Dynamic Adaptive State Sharding with Recursive Merkle Trie Rebalancing and Time-Sliced Execution
+
+
+This repository contains our Go-based implementation for **Question 2** of the B2B Blockchain Competition. The problem is divided into two distinct parts:
+
+- **Part A:** Dynamic Adaptive State Sharding with Recursive Merkle Tries and Time-Sliced Execution
+- **Part B:** In-Memory DAG-based Block Propagation with Conflict Resolution and Fork Pruning
+
+---
+
+
+## Part A: Dynamic Adaptive State Sharding
+
+### Key Features
+- **Recursive Merkle Tries**: Custom implementation for efficient state verification
+- **Adaptive Sharding**: Dynamic redistribution based on state access patterns
+- **Time-Sliced Execution**: Different shards active at different consensus ticks
+- **Cross-Shard Proofs**: Compact proofs for cross-shard transactions
+- **Global State Consistency**: Maintained through hierarchical root hash calculation
+
+
+## Part B: DAG-based Block Propagation
+
+### Key Features
+- **Multi-Parent Blocks**: Blocks can reference multiple parent blocks
+- **Parallel Block Proposals**: Multiple validators can propose blocks simultaneously
+- **Conflict Resolution**: Automatic detection and resolution of transaction conflicts
+- **Fork Pruning**: Algorithm to determine the "heaviest" path in the DAG
+- **Visual Representation**: ASCII visualization of the growing DAG structure
+
+
+
+
+
+
+
+
 ## Contributors
 1 - Kalsoom Tariq
 2-  Kissa Zahra
