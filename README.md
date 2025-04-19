@@ -1,89 +1,74 @@
-# Blockchain Smart Contract Optimization
+# Progressive Jackpot Raffle - Smart Contract DApp
+
+A decentralized blockchain application implementing a progressive jackpot raffle system using Solidity smart contracts.
+
 ## Overview
-Brief introduction to the project:
 
-What is the purpose of the project?
+This project provides a complete decentralized raffle solution where users can purchase tickets, contribute to a growing prize pool, and participate in a provably fair winner selection process when the raffle concludes.
 
-What problem does the optimization solve?
+## Features
 
-High-level approach to optimizing smart contracts.
+### Role-Based Access Control
 
-Features
-Graphical User Interface (GUI):
+| Role      | Description                               |
+|-----------|-------------------------------------------|
+| Organizer | Deploys contract and manages raffle setup |
+| Buyer     | Purchases tickets and claims jackpot      |
 
-A description of the GUI (if applicable).
+### Configurable Parameters
 
-Key features of the interface (e.g., buttons for interaction, data visualization).
+When deploying the smart contract, you can customize:
+- `ticketPrice`: Price per ticket (in wei)
+- `maxTicketsPerTx`: Maximum tickets a buyer can purchase per transaction
+- `jackpotPercentage`: Percentage of contract balance awarded to winner (0-100)
+- `raffleDuration`: Time period before raffle ends (in seconds)
 
-Optimization Techniques:
+## Installation
 
-Summary of the optimization techniques applied to the smart contracts (e.g., gas optimization, security improvements, etc.).
+1. Clone the repository:
+   ```
+   git clone https://github.com/KalsoomTariq/B2B-Block-Chain-Competition.git
+   ```
 
-Screenshots
-Include relevant screenshots of the GUI or the project in action.
+2. Ensure Ganache is running and connected to MetaMask
 
-Provide captions for each image to explain what’s being shown.
+3. Compile the contract:
+   ```
+   truffle compile
+   ```
 
-Setup Instructions
-Prerequisites
-List of required software and tools:
+4. Install DApp dependencies:
+   ```
+   cd raffle-dapp
+   npm install
+   ```
 
-Node.js, Solidity, Truffle, etc.
+5. Launch the application:
+   ```
+   npm start
+   ```
 
-Any other dependencies or libraries used in the project.
+## Application Screenshots
 
-Installation
-Step-by-step instructions on how to set up the project locally:
+### Organizer Dashboard
+![Organizer Dashboard](https://github.com/user-attachments/assets/622e0933-e958-49cf-8fad-66aa265ee1f2)
 
-Clone the repository: git clone <repo-url>
+### Buyer Dashboard
+![Buyer Dashboard](https://github.com/user-attachments/assets/88b74f03-1dd8-4b95-a4bf-e180fddc5224)
 
-Install dependencies: npm install
+### Role Assignment Interface
+![Role Assignment Interface](https://github.com/user-attachments/assets/f7a4f6d5-05fc-4bc7-9de9-c6cbf0c8d611)
 
-Set up the environment (e.g., blockchain network, wallets).
+### Role Assignment (Ganache View)
+![Role Assignment Ganache View](https://github.com/user-attachments/assets/7c8c52ac-6a49-4953-b96f-ad3bcb92fc48)
 
-Running the Project
-How to start the project (command line):
+### Ticket Binding Interface
+![Ticket Binding Interface](https://github.com/user-attachments/assets/32c3405c-cae7-4fc8-a3c3-0c6a80a2770e)
 
-Start the GUI or any local server: npm start or node app.js
+### Ticket Binding (Ganache View)
+![Ticket Binding Ganache View](https://github.com/user-attachments/assets/41184d97-1869-41d6-875e-5c5451bf3bad)
 
-Deploy or interact with the smart contracts: truffle migrate (or whatever deployment command is applicable).
-
-Code Overview
-Folder Structure:
-
-Describe the main folders and files in the project:
-
-contracts/ - Smart contract files
-
-src/ - Frontend files
-
-test/ - Unit tests
-
-Purpose of each folder/file in brief.
-
-Main Components:
-
-Describe key components or modules of the project:
-
-Smart contract(s): Brief description of how they work and how they’ve been optimized.
-
-Backend logic: Explanation of how the code handles blockchain interactions.
-
-Frontend (GUI): What does the interface do? How does it interact with the smart contracts?
-
-Usage
-Provide any commands or functions available to interact with the blockchain, for example:
-
-How to interact with the smart contracts via GUI.
-
-Important command-line commands for testing or interacting with the blockchain.
-
-Contributing
-Explain how others can contribute to the project, if applicable.
-
-Fork the repository.
-
-Open a pull request for improvements or fixes.
-
-License
-Add information about the license under which the project is available (e.g., MIT, GPL).
+## Contributors
+1 - Kalsoom Tariq
+2-  Kissa Zahra
+3-  Aliza Ibrahim
