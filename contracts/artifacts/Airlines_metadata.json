@@ -1,0 +1,153 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balanceDetails",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "escrow",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "status",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "hashOfDetails",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "register",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "toAirline",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "hashOfDetails",
+						"type": "uint256"
+					}
+				],
+				"name": "request",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "fromAirline",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "hashOfDetails",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "done",
+						"type": "uint256"
+					}
+				],
+				"name": "response",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "toAirline",
+						"type": "address"
+					}
+				],
+				"name": "settlePayment",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "AirlineZ",
+						"type": "address"
+					}
+				],
+				"name": "unregister",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/airlines.sol": "Airlines"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/airlines.sol": {
+			"keccak256": "0xf4ac8416b7edbb75b338d14c1c85fb954781e3f78227aa6b03300a4b0e41f244",
+			"urls": [
+				"bzz-raw://5f52a7c14a6fcc9786e980922915a493b1d9ceb8b61ea0e28fa3fe5293c6e279",
+				"dweb:/ipfs/QmW8LuVdkFsH3bM9ZAi1ue16dxL352BF72gWeqmyPdvgdC"
+			]
+		}
+	},
+	"version": 1
+}
