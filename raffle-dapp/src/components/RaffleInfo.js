@@ -53,6 +53,10 @@ function RaffleInfo({ raffleInfo, currentAccount, contractInstance, web3 }) {
             <h6>Current Jackpot:</h6>
             <p className="text-success">{raffleInfo.jackpotAmount} ETH</p>
           </div>
+          <div>
+            <h6>Max Tickets:</h6>
+            <p>{raffleInfo.totalTickets} / {raffleInfo.maxTickets}</p>
+          </div>
         </div>
 
         {!raffleInfo.isEnded ? (

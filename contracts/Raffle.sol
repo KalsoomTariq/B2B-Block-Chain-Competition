@@ -13,6 +13,8 @@ contract Raffle {
     uint public jackpotPercentage;
     uint public raffleDuration;
     uint public raffleStartTime;
+    uint public maxTickets;
+
 
     Ticket[] public tickets;
     mapping(address => Role) public roles;
@@ -46,7 +48,8 @@ contract Raffle {
         uint _ticketPrice,
         uint _maxTicketsPerTx,
         uint _jackpotPercentage,
-        uint _raffleDuration // in seconds
+        uint _raffleDuration,
+        uint _maxTickets
     ) public {
         require(_jackpotPercentage <= 100, "Invalid jackpot percentage");
         owner = msg.sender;
@@ -55,8 +58,10 @@ contract Raffle {
         maxTicketsPerTx = _maxTicketsPerTx;
         jackpotPercentage = _jackpotPercentage;
         raffleDuration = _raffleDuration;
+        maxTickets = _maxTickets;
         raffleStartTime = block.timestamp;
     }
+
 
     function assignRole(address _user, Role _role) external onlyRole(Role.ORGANIZER) {
         roles[_user] = _role;
@@ -64,7 +69,7 @@ contract Raffle {
 
     function purchaseTickets(uint _numTickets) external payable onlyRole(Role.BUYER) raffleActive {
         require(_numTickets > 0 && _numTickets <= maxTicketsPerTx, "Invalid ticket amount");
-        require(msg.value == _numTickets * ticketPrice, "Incorrect Ether sent");
+        require(tickets.length + _numTickets <= maxTickets, "Exceeds max tickets");
 
         for (uint i = 0; i < _numTickets; i++) {
             tickets.push(Ticket(msg.sender));
@@ -74,16 +79,17 @@ contract Raffle {
 
         lastPurchaseTime = block.timestamp;
 
-        // Check for time-based end
-        if (block.timestamp >= raffleStartTime + raffleDuration) {
+        // End raffle by condition
+        if (block.timestamp >= raffleStartTime + raffleDuration || tickets.length >= maxTickets) {
             endRaffle();
         }
     }
 
     function endRaffle() public raffleActive {
-        require(block.timestamp >= raffleStartTime + raffleDuration, "Raffle duration not met");
-        require(tickets.length > 0, "No tickets sold");
-
+        require(
+            block.timestamp >= raffleStartTime + raffleDuration || tickets.length >= maxTickets,
+            "Raffle cannot be ended yet"
+        );
         uint randomIndex = uint(keccak256(
             abi.encodePacked(
                 blockhash(block.number - 1),

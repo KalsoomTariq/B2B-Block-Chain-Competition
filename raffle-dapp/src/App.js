@@ -22,11 +22,13 @@ function App() {
     ticketPrice: 0,
     jackpotAmount: 0,
     totalTickets: 0,
+    maxTickets: 0,
     timeRemaining: 0,
     isEnded: false,
     winner: null,
     userRole: null,
   });
+  
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -115,15 +117,19 @@ function App() {
         // Get user role
         const userRole = await contractInstance.roles(currentAccount);
 
+        const maxTickets = await contractInstance.maxTickets();
+
         setRaffleInfo({
           ticketPrice: web3.utils.fromWei(ticketPrice.toString(), 'ether'),
           jackpotAmount: web3.utils.fromWei(jackpotAmount.toString(), 'ether'),
           totalTickets: totalTickets.toString(),
+          maxTickets: maxTickets.toString(),
           timeRemaining,
           isEnded,
           winner,
           userRole: parseInt(userRole),
         });
+
       } catch (error) {
         console.error("Error loading raffle info:", error);
         setError(`Error loading raffle information: ${error.message}`);
