@@ -68,6 +68,10 @@ When deploying the smart contract, you can customize:
 ### Ticket Binding (Ganache View)
 ![Ticket Binding Ganache View](https://github.com/user-attachments/assets/41184d97-1869-41d6-875e-5c5451bf3bad)
 
+### Raffle End on Max Ticket
+![raffle_end_max](https://github.com/user-attachments/assets/6a612333-e7b2-47a8-9ae3-6f93872e0127)
+
+
 
 
 # Q2: Dynamic Adaptive State Sharding with Recursive Merkle Trie Rebalancing and Time-Sliced Execution
