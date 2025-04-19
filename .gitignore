@@ -1,0 +1,29 @@
+# Truffle artifacts and build files
+build/
+artifacts/
+
+# Node modules
+node_modules/
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# Truffle config for private keys or secrets (optional if used)
+.secret
+.env
+
+# Mac OS system files
+.DS_Store
+
+# Logs
+*.log
+
+# Coverage output
+coverage/
+
+# VS Code settings
+.vscode/
+
+# Ganache CLI database
+chaindata/
